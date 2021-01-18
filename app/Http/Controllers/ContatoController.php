@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\home;
+use App\Models\contato;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class ContatoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class HomeController extends Controller
     public function index()
     {
         $dados = array();
-        return view('site.home', $dados);
+        return view('site.sobre.contato', $dados);
     }
 
     /**
@@ -42,10 +42,10 @@ class HomeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\home  $home
+     * @param  \App\Models\contato  $contato
      * @return \Illuminate\Http\Response
      */
-    public function show(home $home)
+    public function show(contato $contato)
     {
         //
     }
@@ -53,10 +53,10 @@ class HomeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\home  $home
+     * @param  \App\Models\contato  $contato
      * @return \Illuminate\Http\Response
      */
-    public function edit(home $home)
+    public function edit(contato $contato)
     {
         //
     }
@@ -65,10 +65,10 @@ class HomeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\home  $home
+     * @param  \App\Models\contato  $contato
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, home $home)
+    public function update(Request $request, contato $contato)
     {
         //
     }
@@ -76,10 +76,10 @@ class HomeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\home  $home
+     * @param  \App\Models\contato  $contato
      * @return \Illuminate\Http\Response
      */
-    public function destroy(home $home)
+    public function destroy(contato $contato)
     {
         //
     }
