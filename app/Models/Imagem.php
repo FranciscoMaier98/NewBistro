@@ -5,7 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class entrega extends Model
+class Imagem extends Model
 {
     use HasFactory;
+    protected $table = "imagem";
+    public $timestamps = false;
 }

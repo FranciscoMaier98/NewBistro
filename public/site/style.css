@@ -118,6 +118,14 @@ footer #desenvolvido-por {
     background-color: brown;
 }
 
+#lista-catalogo #categoria div{
+    padding: 10px;
+    font-size: 15px;
+    font-weight:700;
+    color: #444;
+    
+}
+
 /* -----------------------------------*/
 /* ---------->>> SOBRE HORÁRIO <<<-----------*/
 /* -----------------------------------*/

@@ -2,6 +2,8 @@
 
 @section('content')
 
+    
+ 
     <section>
         <div class="container">
             <div class="row">
@@ -42,19 +44,39 @@
                         </div>
                     </div>
 
-                    <?php foreach():?>
-                        <div id="lista-catalogo">
-                            <div >
-                                <div data-toogle="collapse" >
-
+                    <div id="lista-catalogo">
+                        <?php foreach($categoria as $cat):?>
+                            <div class="item-catalogo" id="item-catalogo">
+                                <div class="categoria-{{$cat->id}}" id="categoria">
+                                    <div data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseProduct1" class="category-collapsed bg-white py-15 px-20 bb-1-gray pointer collapsed">
+                                        <span>{{$cat->categoria}}</span>
+                                        <i class="fas fa-plus float-right mt-4"></i>
+                                        <?php foreach($produto as $pro):?>
+                                            <?php if(($pro->id_categoria==$cat->id)){ ?>
+                                            <div id="collapseProduct{{$cat->id}}" class="collapse">
+                                                <div class="card card-body br-0">
+                                                    <div>
+                                                        <li class="media m-0 d-flex justify-between">
+                                                            <div class="form-group-radio_group link-produc w-100">
+                                                                <span class="fw-500 fs-m number">{{$pro->nome_produto}}</span>
+                                                                <?php if((!empty($pro->id_texto)) ) {?>
+                                                                    <p class="fw-300 fs-1-2 mt-5">
+                                                                        {{$pro->id_texto}}
+                                                                    </p>
+                                                                <?php }?>
+                                                            </div>
+                                                            <a href=""></a>
+                                                        </li>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php }?>
+                                        <?php endforeach;?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>                    
-                    <?php endforeach;?>
-
-
-
-
+                        <?php endforeach;?>
+                    </div>
                 </div>
                 <div class="co-lg-4">
                     

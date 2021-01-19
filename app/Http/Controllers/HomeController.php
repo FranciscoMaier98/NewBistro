@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\home;
+use App\Models\Produto;
+use App\Models\Categoria;
+use App\Models\Imagem;
+use App\Models\Texto;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,7 +18,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $dados = array();
+        $produto = Produto::all();
+        $categoria = Categoria::all();
+        $imagem = Imagem::all();
+        $texto = Texto::all();
+        $dados = array(
+            "produto"=>$produto,
+            "categoria"=>$categoria,
+            "imagem"=>$imagem,
+            "texto"=>$texto
+        );
         return view('site.home', $dados);
     }
 
