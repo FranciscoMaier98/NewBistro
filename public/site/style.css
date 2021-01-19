@@ -1,0 +1,211 @@
+/* -----------------------------------*/
+/* ---------->>> LAYOUT <<<-----------*/
+/* -----------------------------------*/
+
+body {
+    background-image:
+    linear-gradient(
+       white,
+        transparent
+    ), url("/images/img37.jpg");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size:auto;
+    background-attachment: fixed;
+
+    font-family: Raleway,sans-serif;
+    font-size: 13px;
+    color: #444;
+    overflow-x: hidden;
+}
+
+body header {
+    margin-bottom: 15px;
+}
+body header a {
+    
+}
+body header a img {
+    max-height: 120px;
+    margin-top: 15px;
+}
+
+body header div {
+    text-align: right;
+}
+body header div ul {
+    list-style: none;  
+    
+}
+body header div ul li{
+    display: inline-block;
+    background-color:white;
+    padding: 3px;
+    margin: 5px;
+}
+
+
+
+footer {
+    background-color: brown;
+}
+
+footer #contato-infos {
+    padding-top: 30px;
+    padding-bottom: 25px;
+    color: white;
+}
+
+footer #desenvolvido-por {
+    padding: 20px;
+    color: white;
+}
+
+/* -----------------------------------*/
+/* ---------->>> HOME <<<-----------*/
+/* -----------------------------------*/
+
+.col-12 {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#menu-pesquisa {
+    background-color: brown;
+    
+}
+#menu-pesquisa ul{
+    list-style: none;  
+    padding: 15px;
+    color: white;
+}
+#menu-pesquisa ul li{
+    display: inline-block;
+}
+#menu-pesquisa span {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#menu-pesquisa ul li a {
+    color: white;
+}
+
+#menu-pedido {
+    background-color:white;
+}
+#menu-pedido #pedido{
+    
+}
+#meu-pedido{
+    font-size: 20px;
+}
+
+
+#formas-pagamento ul {
+    list-style: none; 
+}
+#formas-pagamento ul li {
+    display: inline-block; 
+}
+
+
+#area-pesquisa {
+    background-color: white;
+    padding: 10px;
+}
+
+#area-pesquisa button{
+    background-color: brown;
+}
+
+/* -----------------------------------*/
+/* ---------->>> SOBRE HORÁRIO <<<-----------*/
+/* -----------------------------------*/
+
+#horario-funcionamento span {
+   padding: 10px;
+}
+
+#menu-sobre {
+    background-color: white;
+    padding: 10px;    
+}
+#menu-sobre {
+    display:inline-block;
+}
+#menu-sobre li {
+    display:inline-block;
+    list-style: none;
+    width:33%;
+    text-align: center;
+}
+#menu-sobre li a {
+    
+}
+
+#lista-horario {
+    font-size:0.95em;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#div-lista-horario {
+    padding-bottom: 100px;
+}
+
+#lista-horario div {
+    padding: 10px;
+}
+
+#lista-horario span{
+    border-bottom: 1px solid #eee;
+}
+
+/* -----------------------------------*/
+/* ---------->>> SOBRE ENTREGA <<<-----------*/
+/* -----------------------------------*/
+
+#lista-entrega {
+    font-size:0.95em;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#div-lista-entrega {
+    padding-bottom: 100px;
+}
+
+#lista-entrega div {
+    padding: 10px;
+}
+
+#lista-entrega span {
+    border-bottom: 1px solid #eee;
+}
+
+/* -----------------------------------*/
+/* ---------->>> SOBRE CONTATO <<<-----------*/
+/* -----------------------------------*/
+
+
+#lista-contato {
+    font-size:0.95em;
+    border: 1px solid black;
+    background-color: white;
+}
+
+#lista-contato #titulo-contato {
+    margin:10px;
+}
+
+#div-lista-contato {
+    padding-bottom: 100px;
+}
+
+#lista-contato div {
+    
+}
+
+#lista-contato span {
+    border-top: 1px solid #eee;
+}
