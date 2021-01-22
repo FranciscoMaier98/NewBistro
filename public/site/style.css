@@ -7,7 +7,7 @@ body {
     linear-gradient(
        white,
         transparent
-    ), url("/images/img37.jpg");
+    ), url("/imagens/img37.jpg");
     background-repeat: no-repeat;
     background-position-x: center;
     background-size:auto;
@@ -100,7 +100,9 @@ footer #desenvolvido-por {
     font-size: 20px;
 }
 
-
+#formas-pagamento {
+    border-bottom: 1px solid #eee;
+}
 #formas-pagamento ul {
     list-style: none; 
 }
@@ -118,13 +120,39 @@ footer #desenvolvido-por {
     background-color: brown;
 }
 
-#lista-catalogo #categoria div{
+#lista-catalogo #categoria #produto-colapsado{
     padding: 10px;
     font-size: 15px;
     font-weight:700;
     color: #444;
-    
 }
+
+#titulo-produto {
+    font-weight: 700;
+}
+
+#row-home {
+    margin-bottom: 100px;
+}
+
+#preco-produto-catalogo {
+    color:#feaf33;
+    font-size:1.2em;
+}
+
+#texto-produto-catalogo {
+    font-weight: 300;
+    font-size: 1.0em;
+    color: #666;
+}
+
+#imagem-catalogo {
+    width: 300px;
+}
+#imagem-catalogo img{
+    width: 100%;
+}
+
 
 /* -----------------------------------*/
 /* ---------->>> SOBRE HORÁRIO <<<-----------*/
@@ -217,3 +245,117 @@ footer #desenvolvido-por {
 #lista-contato span {
     border-top: 1px solid #eee;
 }
+
+/* -----------------------------------*/
+/* ---------->>> DETALHES <<<-----------*/
+/* -----------------------------------*/
+
+
+#botao-submissao div {
+    padding: 20px;
+}
+
+#botao-submissao button {
+    border-radius: 20px;
+    background-color: brown;
+    border-color: brown;
+}
+
+
+#d-definir-quantidade {
+    border: 1px solid #eee;
+    font-weight: 300;
+    border-radius: 20px;
+    padding: 0 30px;
+}
+
+#definir-quantidade span {
+    margin-top: -3px;
+    font-size: 1.6em;
+}
+
+#definir-quantidade button {
+    border: 0;
+    background: transparent;
+    padding: 0 10px;
+    font-size: 2em;
+    cursor: pointer;
+    color: brown;
+}
+
+#d-valor-unitario {
+    
+}
+
+#d-valor-total {
+    padding: 20px;
+}
+
+#titulo-detalhes {
+    padding:20px;
+    color: #666;
+}
+
+#p-titulo-categoria {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+#p-titulo-detalhes {
+    font-size: 18px;
+}
+
+#preco-unitario {
+    color: brown;
+    font-size:1.2em;
+}
+
+#preco-total {
+    color: brown;
+    font-size:1.8em;
+    height: 35px;
+    width: 70px;
+}
+
+#valores-detalhes-quantidade {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+#preco-total-titulo {
+
+}
+
+#preco-unitario-titulo {
+
+}
+
+#valores-detalhes {
+    background-color: white;
+    margin-top: 15px;
+}
+
+#valores-detalhes-titulo {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+#span-valores-detalhes-titulo {
+    
+    font-weight: 700;
+}
+
+#quantidade {
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    border: none;
+    background-color: white;
+    font-size: 1.4em;
+}
+
+#d-observacoes {
+    margin-top: 15px;
+    padding: 20px;
+}
+
