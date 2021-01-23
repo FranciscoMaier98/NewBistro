@@ -22,7 +22,8 @@
                             <span>|</span>
                             <li class="nav-item">
                                 <a href="{{route('site.sobre.horario')}}">
-                                    Aberto/fechado
+                                    @if(date('H') >= 23 && date('H') <= 17 ) FECHADO
+                                    @else ABERTO
                                 </a>    
                             </li>
                             <span>|</span>
@@ -42,7 +43,7 @@
                         </div>
                     </div>
 
-                    <?php foreach():?>
+                    
                         <div id="lista-catalogo">
                             <div >
                                 <div data-toogle="collapse" >
@@ -50,7 +51,7 @@
                                 </div>
                             </div>
                         </div>                    
-                    <?php endforeach;?>
+                    
 
 
 
