@@ -39,12 +39,12 @@ class ComprasController extends Controller
             foreach($todos as $k => $t){
                 echo $k;
                 echo "<br>";
-                //array_push($produtos , DB::select('select * from produto where id='.$k));
+                array_push($produtos , DB::select('select * from produto where id='.$k));
                 
             }   
 
             print_r($produtos);
-            exit;
+            
 
 
             foreach($produto as $pro){

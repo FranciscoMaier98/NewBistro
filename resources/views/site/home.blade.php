@@ -2,12 +2,13 @@
 
 @section('content')
 
-    
- 
     <section>
+        
         <div class="container">
             <div class="row" id="row-home">
-                <div class="col-lg-8 ">
+
+                <div class="col-lg-8">
+                    
                     <nav id="menu-pesquisa" class="navbar navbar-expand-lg col-12">
                         <ul class="navbar-nav mr-auto text-uppercase">
                             <li class="nav-item">
@@ -35,6 +36,8 @@
                             </li>
                         </ul>
                     </nav>
+                    
+                    
                     <div >
                         <div class="col-12 d-flex justify-content-between" id="area-pesquisa">
                             <input type="text" name="pesquisa" placeholder="Procure algum produto" class="input-search form-control border-0 fs-s p-xs-0 bg-light-gray px-xs-5 fs-1-4">
@@ -43,6 +46,7 @@
                             </button>
                         </div>
                     </div>
+
 
                     <div id="lista-catalogo">
                         <?php foreach($categoria as $cat):?>
@@ -84,15 +88,29 @@
                                             </div>
                                             <?php }?>
                                         <?php endforeach;?>
-                                    
                                 </div>
                             </div>
-                        <?php endforeach;?>
-                    </div>
-                </div>
-                <div class="co-lg-4">
+                        <?php endforeach; ?>
+                        
                     
-                    <div class="">
+                        <div id="lista-catalogo">
+                            <div >
+                                <div data-toogle="collapse" >
+
+
+                                </div>
+                            </div>
+                        </div>                    
+                    
+                    </div>
+                    
+
+
+                </div>
+
+               
+                
+                <div class="co-lg-4">
                         
                         <div class="col-12" id="menu-pedido">
                             <div>
@@ -244,9 +262,19 @@
                         </div>
 
                         <div class="col-12"  id="menu-pedido"></div>
-                    </div>
+                    
+                    
+                   
+                
+                
                 </div>
+
+
+            
             </div>
+
+
+
         </div>
     </section>
 
