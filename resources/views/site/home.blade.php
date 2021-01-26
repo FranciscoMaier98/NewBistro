@@ -25,8 +25,7 @@
                             <span>|</span>
                             <li class="nav-item">
                                 <a href="{{route('site.sobre.horario')}}">
-                                    @if(date('H') >= 23 && date('H') <= 17 ) FECHADO
-                                    @else ABERTO
+                                    ABERTO/FECHADO
                                 </a>    
                             </li>
                             <span>|</span>

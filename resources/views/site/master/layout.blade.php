@@ -20,6 +20,10 @@
                 <div>
                     <ul>
                         <li></li>
+                        <li> @if(date('H') >= 23 && date('H') <= 17 ) <font style="font-weight:700; font-size: 20px" color='red'>FECHADO</font>
+                            @else <font style="font-weight:600; font-size: 20px" color='green'>ABERTO</font>
+                            @endif
+                        </li>
                         <li><a href="{{route('site.home')}}"><i aria-hidden="true" class="mr-6 fa fa-home"></i> Home</a></li>
                         <li><a href="{{route('site.sobre.contato')}}"><i aria-hidden="true" class="mr-6 icon-app icon-info"></i> Info</a></li>
                         <li><a href="{{route('site.sobre.entrega')}}"><i aria-hidden="true" class="mr-6 icon-app icon-login"></i> Entrega</a></li>
