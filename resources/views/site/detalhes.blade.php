@@ -3,12 +3,9 @@
 @section('content')
 
     <section>
-        
         <div class="container">
             <div class="row" id="row-home">
-
-                <div class="col-lg-8">
-                    
+                <div class="col-lg-8 ">
                     <nav id="menu-pesquisa" class="navbar navbar-expand-lg col-12">
                         <ul class="navbar-nav mr-auto text-uppercase">
                             <li class="nav-item">
@@ -25,8 +22,7 @@
                             <span>|</span>
                             <li class="nav-item">
                                 <a href="{{route('site.sobre.horario')}}">
-                                    @if(date('H') >= 23 && date('H') <= 17 ) FECHADO
-                                    @else ABERTO
+                                    Aberto/fechado
                                 </a>    
                             </li>
                             <span>|</span>
@@ -37,81 +33,77 @@
                             </li>
                         </ul>
                     </nav>
-                    
-                    
-                    <div >
-                        <div class="col-12 d-flex justify-content-between" id="area-pesquisa">
-                            <input type="text" name="pesquisa" placeholder="Procure algum produto" class="input-search form-control border-0 fs-s p-xs-0 bg-light-gray px-xs-5 fs-1-4">
-                            <button class="btn btn-primary text-center text-uppercase">
-                                <i aria-hidden="true" class="fas fa-search"></i>
-                            </button>
+
+                    <div>
+                        <div class="bg-white mt-15">
+                            <div class="m-0 relative p-20 bb-1-gray" id="titulo-detalhes">
+                                <div class="media-boy">
+                                    <div class="d-flex justify-between">
+                                        <div>
+                                            <p id="p-titulo-categoria">
+                                                <span class="number">1x </span> 
+                                                <span class="text-uppercase">{{$categoria}}</span>
+                                            </p>
+                                            <p id="p-titulo-detalhes">-- {{$produto->nome_produto}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                   
+                    <div id="valores-detalhes">
+                        <div class="bg-white p-15 mt-15 bb-1-gray" id="valores-detalhes-titulo">
+                            <span class="text-uppercase" id="span-valores-detalhes-titulo">VALORES</span>
+                        </div>
 
-
-                    <div id="lista-catalogo">
-                        <?php foreach($categoria as $cat):?>
-                            <div class="item-catalogo" id="item-catalogo">
-                                <div class="categoria-{{$cat->id}}" id="categoria">
-                                    <div data-toggle="collapse" role="button" id="produto-colapsado" aria-expanded="false" href="#collapseProduct{{$cat->id}}" aria-controls="collapseProduct1" class="category-collapsed bg-white py-15 px-20 bb-1-gray pointer collapsed">
-                                        <span>{{$cat->categoria}}</span>
-                                        <i class="fas fa-plus float-right"></i>
-                                    </div>
-                                        <?php foreach($produto as $pro):?>
-                                            <?php if(($pro->id_categoria==$cat->id)){ ?>
-                                            <div id="collapseProduct{{$cat->id}}" class="collapse">
-                                                <div class="card card-body br-0">
-                                                    <div>
-                                                        <li class="media m-0 d-flex justify-between">
-                                                            <div class="form-group-radio_group link-produc w-100  mt-3">
-                                                                <span class="fs-m number" id="titulo-produto">{{$pro->nome_produto}}</span>
-                                                                <?php if((!empty($pro->id_texto)) ) {?>
-                                                                    <p class="fw-300 fs-1-2 mt-3" id="texto-produto-catalogo">
-                                                                        {{$texto[$pro->id_texto-1]->texto}}
-                                                                    </p>
-                                                                <?php }?>
-                                                                <div class="d-flex align-center justify-between mt-3">
-                                                                    <div>
-                                                                        <p class="price fs-m color-main" id="preco-produto-catalogo">
-                                                                            <span>
-                                                                                R$25,00
-                                                                            </span>
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <a class="img-catalog ml-15 mt-3" id="imagem-catalogo" href="{{url('detalhes/'.$pro->id)}}">
-                                                                <img src="{{asset('imagens/'.$imagem[$pro->id_imagem-1]->imagem)}}" class="img-fluid br-5" alt="">
-                                                            </a> 
-                                                        </li>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <?php }?>
-                                        <?php endforeach;?>
+                        <div class="bg-white p-15 bb-1-gray d-flex justify-content-between" id="valores-detalhes-quantidade">
+                            <div class="" id="d-valor-unitario">
+                                <div>
+                                    <span id="preco-unitario-titulo">valor unitário</span><br>
+                                    <span id="preco-unitario">R$ {{$produto->preco}}</span>
                                 </div>
                             </div>
-                        <?php endforeach; ?>
+                            <form id="definir-quantidade" method="POST" action="{{url('adicionar')}}">
+                            @csrf
+                            <input type="hidden" name="id_produto" value="{{$produto->id}}">
+                            <div class="" id="d-definir-quantidade">
+                            
+                                <button class="qntminus color-main" id="menos" data-action="decrementar">-</button>
+                                
+                                <input type="hidden" name="qt_produto" value="1">
+                                <input type="text" id='quantidade' value="1" disabled/>
+                                <button class="qntminus color-main" id="mais" data-action="incrementar">+</button>
+                                    
+                            </div>
+                            
+                            
+                        </div>
+
+                        <div class="text-right" id="d-valor-total">
+                            <span id="preco-total-titulo">valor total</span><br>
+                            R$ <input type="text" id="preco-total" value="{{$produto->preco}}" disabled/>
+                        </div>
                         
-                    
-                        <div id="lista-catalogo">
-                            <div >
-                                <div data-toogle="collapse" >
+                    </div>
 
-
-                                </div>
-                            </div>
-                        </div>                    
-                    
+                    <div class="bg-white p-15 bb-1-gray" id="d-observacoes">
+                        <span class="text-uppercase fs-s fw-900">OBSERVAÇÕES</span>
+                        <input maxlength="250" name="observacoes" type="text" class="form-control mt-10 br-0" placeholder="Digite aqui suas observações">
                     </div>
                     
-
+                    <div class="fixed bottom-0 w-100 d-block bg-white" id="botao-submissao">
+                        <div class="p-15 text-center d-block">
+                            <button type="submit" class="btn btn-primary text-uppercase text-center mx-auto">Adicionar pedido</button>
+                        </div>
+                    </div>
+                    </form>
 
                 </div>
-
-               
                 
                 <div class="co-lg-4">
+                    
+                    <div class="">
                         
                         <div class="col-12" id="menu-pedido">
                             <div>
@@ -263,20 +255,11 @@
                         </div>
 
                         <div class="col-12"  id="menu-pedido"></div>
-                    
-                    
-                   
-                
-                
+                    </div>
                 </div>
-
-
-            
             </div>
-
-
-
         </div>
     </section>
+
 
 @endsection

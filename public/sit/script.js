@@ -6,36 +6,29 @@
 //var height = Math.max( body.scrollHeight, body.offsetHeight, 
 //    html.clientHeight, html.scrollHeight, html.offsetHeight );
 
-var wind = ($(window).height()-20);
 
-var navbar = $("#css-navbar");
-var navbarCollapse = $('nav #navbarCollapse');
-var carousel_Image = $('.carousel-item');
-
-
-
-$('a#selecionarItem').click(function(e) {
+$('#definir-quantidade button').on('click', function(e){
     e.preventDefault();
+
+    var qt = parseInt($("#quantidade").val());
+    var preco_total = parseFloat($("#preco-total").val());
+    var preco_produto = preco_total/qt;
+    var action = $(this).attr('data-action');
     
-    console.log($(this).val());
-
-    var id = $(this).val();
-
-
-    $.ajax({
-        url: '{{route("site.menuSelect")}}',
-        type: 'get',
-        dataType: 'json',
-        contentType: 'application/json',
-        data: {
-            'id': id
+    if(action == 'decrementar') {
+        if((qt-1) >= 1) {
+            qt=qt-1;
+            preco_total = preco_total-preco_produto;
         }
-    }).done(function(data){
-        console.log(data);
-    });
+    } else if(action == 'incrementar') {
+        qt=qt+1;
+        preco_total = preco_total+preco_produto;
+    }
+    console.log(qt);
+    $("#quantidade").val(qt);
+    $("#preco-total").val(preco_total);
+    $("input[name=qt_produto]").val(qt);
 });
-
-
 
 /*
 $(function(){
