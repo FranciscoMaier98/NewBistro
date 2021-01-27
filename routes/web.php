@@ -24,4 +24,3 @@ Route::get('/sobre/contato', 'App\Http\Controllers\ContatoController@index')->na
 Route::get('/detalhes/{produto}', 'App\Http\Controllers\DetalhesController@index')->name('site.detalhes');
 
 Route::post('/adicionar', 'App\Http\Controllers\ComprasController@adicionar')->name('adicionar');
-Route::get('/carrinho', 'App\Http\Controllers\ComprasController@index')->name('site.carrinho');

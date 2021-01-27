@@ -61,7 +61,7 @@
                             <div class="" id="d-valor-unitario">
                                 <div>
                                     <span id="preco-unitario-titulo">valor unitário</span><br>
-                                    <span id="preco-unitario">R$ {{$produto->preco}}</span>
+                                    <span id="preco-unitario">R${{$produto->preco}},00</span>
                                 </div>
                             </div>
                             <form id="definir-quantidade" method="POST" action="{{url('adicionar')}}">

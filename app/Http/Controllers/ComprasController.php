@@ -5,7 +5,6 @@ use App\Models\Produto;
 use App\Models\Categoria;
 use App\Models\Imagem;
 use App\Models\Texto;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class ComprasController extends Controller
@@ -16,8 +15,7 @@ class ComprasController extends Controller
 
     public function adicionar(Request $request) {
 
-        $dados = array();
-
+        
         if(!empty($request->id_produto)) {
 
             $id = $request->id_produto;
@@ -33,45 +31,28 @@ class ComprasController extends Controller
                 echo "else";
             }
 
-            $produtos = array();
-            $todos = $request->session()->all();
+            print_r($request->session()->get($id));
 
-            foreach($todos as $k => $t){
-                echo $k;
-                echo "<br>";
-                //array_push($produtos , DB::select('select * from produto where id='.$k));
-                
-            }   
-
-            print_r($produtos);
-            exit;
-
-
-            foreach($produto as $pro){
-                $categoria = $pro->id_categoria;
-                $imagem = $pro->id_imagem;
-                $texto = $pro->id_texto;
-            }
-            
-            $categoria = DB::table('categoria')->where('id', $categoria)->value('categoria');//Categoria::where('id', '1');
-            $imagem = DB::table('imagem')->where('id', $imagem)->value('imagem');
-            $texto = DB::table('texto')->where('id', $texto)->value('texto');
-            
+            $produto = Produto::all();
+            $categoria = Categoria::all();
+            $imagem = Imagem::all();
+            $texto = Texto::all();
             $dados = array(
-                'request'=>$request,
-                'produto'=>$produto,
-                'categoria'=>$categoria,
+                "produto"=>$produto,
+                "categoria"=>$categoria,
                 "imagem"=>$imagem,
                 "texto"=>$texto
             );
-    
-            
-            return view('site.carrinho', $dados);
-        
+            return view('site.home', $dados);
+
+            /*
+            exit;
+
+            $request->session()->put('id', $id);
+            $request->session()->put('qt', $qt);
+            */
         }
-        
-        
-        return view('site.home', $dados);
+
 
 
         /*echo "ID: ".$request->session()->pull('id')."<br>";

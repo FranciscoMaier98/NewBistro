@@ -14,7 +14,6 @@ class DetalhesController extends Controller
     public function index(Produto $produto) {
 
         //$imagem = Imagem::where('id', $produto->id_imagem);
-        print_r($produto->id);
         $categoria = DB::table('categoria')->where('id', $produto->id)->value('categoria');//Categoria::where('id', '1');
         
         $dados = array(
