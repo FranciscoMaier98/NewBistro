@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('site.home');
+Route::get('/sobre/horario', 'App\Http\Controllers\HorarioController@index')->name('site.sobre.horario');
+Route::get('/sobre/entrega', 'App\Http\Controllers\EntregaController@index')->name('site.sobre.entrega');
+Route::get('/sobre/contato', 'App\Http\Controllers\ContatoController@index')->name('site.sobre.contato');
+Route::get('/detalhes/{produto}', 'App\Http\Controllers\DetalhesController@index')->name('site.detalhes');
+
+Route::post('/adicionar', 'App\Http\Controllers\ComprasController@adicionar')->name('adicionar');
+Route::get('/carrinho', 'App\Http\Controllers\ComprasController@index')->name('site.carrinho');
