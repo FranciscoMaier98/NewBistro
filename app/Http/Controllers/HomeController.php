@@ -18,7 +18,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $dados = array();
         $produto = Produto::all();
         $categoria = Categoria::all();
         $imagem = Imagem::all();
