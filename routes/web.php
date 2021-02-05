@@ -21,6 +21,12 @@ Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('site.hom
 Route::get('/sobre/horario', 'App\Http\Controllers\HorarioController@index')->name('site.sobre.horario');
 Route::get('/sobre/entrega', 'App\Http\Controllers\EntregaController@index')->name('site.sobre.entrega');
 Route::get('/sobre/contato', 'App\Http\Controllers\ContatoController@index')->name('site.sobre.contato');
+
 Route::get('/detalhes/{produto}', 'App\Http\Controllers\DetalhesController@index')->name('site.detalhes');
 
-Route::post('/adicionar', 'App\Http\Controllers\ComprasController@adicionar')->name('adicionar');
+Route::post('/adicionar', 'App\Http\Controllers\AdicionarController@index')->name('adicionar');
+
+Route::get('/carrinho', 'App\Http\Controllers\CarrinhoController@index')->name('site.carrinho');
+Route::post('/excluir', 'App\Http\Controllers\CarrinhoController@excluir')->name('site.excluir');
+Route::get('/finalizar', 'App\Http\Controllers\CarrinhoController@finalizar')->name('finalizar');
+

@@ -5,15 +5,19 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>Home</title>
-      <link rel="stylesheet" href="{{ asset('site/bootstrap.css') }}">
-      <link rel="stylesheet" href="{{ asset('site/style.css') }}">
-      <link rel="stylesheet" href="{{asset('site/magnific-popup/magnific-popup.css')}}">
+      <link rel="stylesheet" href="{{ asset('sit/bootstrap.css') }}">
+      <link rel="stylesheet" href="{{ asset('sit/style.css') }}">
+      <link rel="stylesheet" href="{{asset('sit/magnific-popup/magnific-popup.css')}}">
     </head>
+    @if(session()->has("carro"))
+        <?php $valores = session()->get("carro"); ?>
+    @endif
+   
 
     <body>
         <header class="mb-15 mb-xs-10">
             <section class="container d-flex justify-content-between">
-                <a href="">
+                <a href="{{route('site.home')}}">
                     <img class="brand-img brand-img-l d-none d-lg-block mt-15" src="{{asset('/imagens/img37.jpg')}}" alt="">
                 </a>
                 <div>
@@ -28,10 +32,6 @@
             </section>
 
         </header>
- 
-        <nav>
-
-        </nav>
  
         @yield('content')
 
@@ -58,9 +58,9 @@
             </div>
         </footer >
 
-        <script src="{{ asset('site/jquery.js') }}"></script>
-        <script src="{{ asset('site/bootstrap.js') }}"></script>
-        <script src="{{ asset('site/script.js') }}"></script>
+        <script src="{{ asset('sit/jquery.js') }}"></script>
+        <script src="{{ asset('sit/bootstrap.js') }}"></script>
+        <script src="{{ asset('sit/script.js') }}"></script>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </body>
 

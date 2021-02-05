@@ -7,7 +7,7 @@ body {
     linear-gradient(
        white,
         transparent
-    ), url("/imagens/img37.jpg");
+    ), url("/newbistro/public/imagens/img37.jpg");
     background-repeat: no-repeat;
     background-position-x: center;
     background-size:auto;
@@ -119,6 +119,7 @@ footer #desenvolvido-por {
 #area-pesquisa button{
     background-color: brown;
 }
+
 
 #lista-catalogo #categoria #produto-colapsado{
     padding: 10px;
@@ -314,7 +315,7 @@ footer #desenvolvido-por {
     color: brown;
     font-size:1.8em;
     height: 35px;
-    width: 70px;
+    
 }
 
 #valores-detalhes-quantidade {
@@ -359,3 +360,22 @@ footer #desenvolvido-por {
     padding: 20px;
 }
 
+
+
+/* -----------------------------------*/
+/* ---------->>> CARRINHO <<<-----------*/
+/* -----------------------------------*/
+
+#Produto_Carrinho {
+    margin-bottom: 35px;
+}
+
+#Finalizar_pedido {
+    margin-bottom: 35px;
+}
+
+#Finalizar_pedido span {
+    font-weight: 700;
+    color:#feaf33;
+    font-size:1.2em;
+}
