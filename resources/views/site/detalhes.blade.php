@@ -110,9 +110,15 @@
                                 <p id="titulo-pedido" class="font-weight-bold fw-900">SEU PEDIDO</p>
                             </div>
                             <hr>
-                            <div>
-                                <p>CARRINHO VAZIO</p>
-                            </div>
+                            @if(!(session()->exists("carro")))
+                                <div>
+                                    <p>CARRINHO VAZIO</p>
+                                </div>
+                            @else
+                                <div>
+                                    <a href="{{route('site.carrinho')}}" class="font-weight-bold fw-900">Ir para o carrinho</a>
+                                </div>
+                            @endif
                         </div>
                         
                         <div class="col-12" id="menu-pedido">

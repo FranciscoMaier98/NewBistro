@@ -9,12 +9,16 @@
       <link rel="stylesheet" href="{{ asset('sit/style.css') }}">
       <link rel="stylesheet" href="{{asset('sit/magnific-popup/magnific-popup.css')}}">
     </head>
+    @if(session()->has("carro"))
+        <?php $valores = session()->get("carro"); ?>
+    @endif
+   
 
     <body>
     
         <header class="mb-15 mb-xs-10">
             <section class="container d-flex justify-content-between">
-                <a href="">
+                <a href="{{route('site.home')}}">
                     <img class="brand-img brand-img-l d-none d-lg-block mt-15" src="{{asset('/imagens/img37.jpg')}}" alt="">
                 </a>
                 <div>

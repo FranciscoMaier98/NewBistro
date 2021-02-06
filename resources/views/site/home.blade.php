@@ -56,7 +56,7 @@
                                         <span>{{$cat->categoria}}</span>
                                         <i class="fas fa-plus float-right"></i>
                                     </div>
-                                        <?php foreach($produto as $pro):?>
+                                        @foreach($produto as $pro)
                                             <?php if(($pro->id_categoria==$cat->id)){ ?>
                                             <div id="collapseProduct{{$cat->id}}" class="collapse">
                                                 <div class="card card-body br-0">
@@ -87,7 +87,7 @@
                                                 </div>
                                             </div>
                                             <?php }?>
-                                        <?php endforeach;?>
+                                        @endforeach
                                 </div>
                             </div>
                         <?php endforeach; ?>
@@ -117,9 +117,16 @@
                                 <p id="titulo-pedido" class="font-weight-bold fw-900">SEU PEDIDO</p>
                             </div>
                             <hr>
-                            <div>
-                                <p>CARRINHO VAZIO</p>
-                            </div>
+
+                            @if(!(session()->exists("carro")))
+                                <div>
+                                    <p>CARRINHO VAZIO</p>
+                                </div>
+                            @else
+                                <div>
+                                    <a href="{{route('site.carrinho')}}" class="font-weight-bold fw-900">Ir para o carrinho</a>
+                                </div>
+                            @endif
                         </div>
                         
                         <div class="col-12" id="menu-pedido">
