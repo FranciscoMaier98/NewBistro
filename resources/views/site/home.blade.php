@@ -259,16 +259,20 @@
                                 </div>
                                 <hr>
                                 <div>
-                                    <p><i class="fab fa-facebook"></i> FACEBOOK</p>
+                                    <p><i class="fab fa-facebook"></i> 
+                                        <a href="https://www.facebook.com/NewBistroivoti"> FACEBOOK</a> 
+                                    </p>
                                 </div>
                                 <hr>
                                 <div>
-                                    <p><i class="fab fa-instagram"></i> INSTAGRAM</p>
+                                    <p><i class="fab fa-instagram"></i> 
+                                        <a href=""> INSTAGRAM</a>    
+                                    </p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-12"  id="menu-pedido"></div>
+                   
                     
                     
                    

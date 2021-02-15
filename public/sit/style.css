@@ -209,7 +209,7 @@ footer #desenvolvido-por {
 }
 
 #div-lista-entrega {
-    padding-bottom: 100px;
+    margin-bottom: 100px;
 }
 
 #lista-entrega div {
@@ -218,6 +218,17 @@ footer #desenvolvido-por {
 
 #lista-entrega span {
     border-bottom: 1px solid #eee;
+}
+
+#div-map {
+    background-color: #444;
+    padding: 10px;
+}
+
+#map {
+    width: 100%;
+    height: 500px;
+    background-color: #ddd;
 }
 
 /* -----------------------------------*/
@@ -360,8 +371,6 @@ footer #desenvolvido-por {
     padding: 20px;
 }
 
-
-
 /* -----------------------------------*/
 /* ---------->>> CARRINHO <<<-----------*/
 /* -----------------------------------*/
@@ -379,3 +388,4 @@ footer #desenvolvido-por {
     color:#feaf33;
     font-size:1.2em;
 }
+
