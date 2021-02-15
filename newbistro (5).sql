@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05-Fev-2021 às 02:14
--- Versão do servidor: 10.4.14-MariaDB
--- versão do PHP: 7.4.10
+-- Generation Time: Feb 15, 2021 at 03:28 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `newbistro`
+-- Database: `newbistro`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `categoria`
+-- Table structure for table `categoria`
 --
 
 CREATE TABLE `categoria` (
@@ -35,7 +35,7 @@ CREATE TABLE `categoria` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `categoria`
+-- Dumping data for table `categoria`
 --
 
 INSERT INTO `categoria` (`id`, `categoria`, `created_at`, `updated_at`) VALUES
@@ -56,7 +56,7 @@ INSERT INTO `categoria` (`id`, `categoria`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `contatos`
+-- Table structure for table `contatos`
 --
 
 CREATE TABLE `contatos` (
@@ -68,7 +68,7 @@ CREATE TABLE `contatos` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `entregas`
+-- Table structure for table `entregas`
 --
 
 CREATE TABLE `entregas` (
@@ -80,7 +80,7 @@ CREATE TABLE `entregas` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `failed_jobs`
+-- Table structure for table `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -96,7 +96,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `imagem`
+-- Table structure for table `imagem`
 --
 
 CREATE TABLE `imagem` (
@@ -107,7 +107,7 @@ CREATE TABLE `imagem` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `imagem`
+-- Dumping data for table `imagem`
 --
 
 INSERT INTO `imagem` (`id`, `imagem`, `created_at`, `updated_at`) VALUES
@@ -120,7 +120,7 @@ INSERT INTO `imagem` (`id`, `imagem`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -130,7 +130,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -147,7 +147,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `password_resets`
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -159,7 +159,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `produto`
+-- Table structure for table `produto`
 --
 
 CREATE TABLE `produto` (
@@ -174,7 +174,7 @@ CREATE TABLE `produto` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `produto`
+-- Dumping data for table `produto`
 --
 
 INSERT INTO `produto` (`id`, `nome_produto`, `id_categoria`, `id_imagem`, `id_texto`, `preco`, `created_at`, `updated_at`) VALUES
@@ -199,7 +199,7 @@ INSERT INTO `produto` (`id`, `nome_produto`, `id_categoria`, `id_imagem`, `id_te
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `texto`
+-- Table structure for table `texto`
 --
 
 CREATE TABLE `texto` (
@@ -210,7 +210,7 @@ CREATE TABLE `texto` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Extraindo dados da tabela `texto`
+-- Dumping data for table `texto`
 --
 
 INSERT INTO `texto` (`id`, `texto`, `created_at`, `updated_at`) VALUES
@@ -224,7 +224,7 @@ INSERT INTO `texto` (`id`, `texto`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -232,135 +232,145 @@ CREATE TABLE `users` (
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `city` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `telephone` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Índices para tabelas despejadas
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `city`, `address`, `telephone`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(8, 'Francisco Salomon Maier', 'chicosm@outlook.com', NULL, 'São Sebastião Do Caí', 'Estrada da Várzea, 435, Vila Rica', '+555199746522', '$2y$10$dhSvQJXlJHur/BfYfYiRkO1QUGFvL03rzyf0RVzjGpho5Edf2vF5m', NULL, '2021-02-11 15:43:34', '2021-02-11 15:43:34');
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Índices para tabela `categoria`
+-- Indexes for table `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `contatos`
+-- Indexes for table `contatos`
 --
 ALTER TABLE `contatos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `entregas`
+-- Indexes for table `entregas`
 --
 ALTER TABLE `entregas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `failed_jobs`
+-- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`) USING HASH;
 
 --
--- Índices para tabela `imagem`
+-- Indexes for table `imagem`
 --
 ALTER TABLE `imagem`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `password_resets`
+-- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`(250));
 
 --
--- Índices para tabela `produto`
+-- Indexes for table `produto`
 --
 ALTER TABLE `produto`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `texto`
+-- Indexes for table `texto`
 --
 ALTER TABLE `texto`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`) USING HASH;
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `categoria`
+-- AUTO_INCREMENT for table `categoria`
 --
 ALTER TABLE `categoria`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT de tabela `contatos`
+-- AUTO_INCREMENT for table `contatos`
 --
 ALTER TABLE `contatos`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `entregas`
+-- AUTO_INCREMENT for table `entregas`
 --
 ALTER TABLE `entregas`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `failed_jobs`
+-- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `imagem`
+-- AUTO_INCREMENT for table `imagem`
 --
 ALTER TABLE `imagem`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de tabela `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT de tabela `produto`
+-- AUTO_INCREMENT for table `produto`
 --
 ALTER TABLE `produto`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT de tabela `texto`
+-- AUTO_INCREMENT for table `texto`
 --
 ALTER TABLE `texto`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT de tabela `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

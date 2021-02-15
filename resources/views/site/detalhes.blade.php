@@ -77,7 +77,6 @@
                                     
                             </div>
                             
-                            
                         </div>
 
                         <div class="text-right" id="d-valor-total">

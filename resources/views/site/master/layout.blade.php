@@ -26,10 +26,39 @@
                         <li><a href="{{route('site.home')}}"><i aria-hidden="true" class="mr-6 fa fa-home"></i> Home</a></li>
                         <li><a href="{{route('site.sobre.contato')}}"><i aria-hidden="true" class="mr-6 icon-app icon-info"></i> Info</a></li>
                         <li><a href="{{route('site.sobre.entrega')}}"><i aria-hidden="true" class="mr-6 icon-app icon-login"></i> Entrega</a></li>
-                        <li><span></span> Login</li>
+                        <li> 
+                            
+                            @if(auth()->user())   
+                            <!-- Responsive Navigation Menu -->
+                            <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+                                <!-- Responsive Settings Options -->
+                                <div class="border-t border-gray-200">
+                                    <div class="space-y-1">
+                                        <!-- Authentication -->
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+                                            <x-responsive-nav-link :href="route('logout')"
+                                                onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                                {{ __('Logout') }}
+                                            </x-responsive-nav-link>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            @else
+                            <!-- Responsive Navigation Menu -->
+                            <a href="{{route('login')}}"><i aria-hidden="true" class="mr-6 icon-app icon-login"></i> Login</a>
+                            @endif
+                        </li>
                     </ul>
                 </div>
+
+
             </section>
+
+            <!-- Settings Dropdown -->
+           
 
         </header>
  
@@ -61,7 +90,11 @@
         <script src="{{ asset('sit/jquery.js') }}"></script>
         <script src="{{ asset('sit/bootstrap.js') }}"></script>
         <script src="{{ asset('sit/script.js') }}"></script>
+        <script src="{{ asset('sit/shapes.js') }}"></script>
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        
+        <!--AIzaSyA416S2z3mz5v3mkjyO0bZLp3OA1CIBIVA-->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgMIKBaDrzLwaDKAmiYldTv6knH-lovwg&callback=initMap"></script>
     </body>
 
 </html>
