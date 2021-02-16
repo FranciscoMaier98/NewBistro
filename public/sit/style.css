@@ -7,16 +7,16 @@ body {
     linear-gradient(
        white,
         transparent
-    ), url("/newbistro/public/imagens/img37.jpg");
+    ), url('../imagens/sushi2.jpg');
     background-repeat: no-repeat;
     background-position-x: center;
     background-size:auto;
     background-attachment: fixed;
 
     font-family: Raleway,sans-serif;
-    font-size: 13px;
-    color: #444;
-    overflow-x: hidden;
+    /* font-size: 13px; */
+    /* color: #444; */
+    overflow-x: hidden; 
 }
 
 body header {
@@ -43,8 +43,16 @@ body header div ul li{
     padding: 3px;
     margin: 5px;
 }
+.borda {
+    border-bottom: 1px solid gray;
+    background-color: #fff;
 
-
+}
+.mais {
+    float: right;
+    font-size: 50px;
+    line-height: 26px;
+}
 
 footer {
     background-color: brown;

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang='pt-br'>
     <head> 
         <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Home</title>
+      <title>New Bistro Delivery</title>
       <link rel="stylesheet" href="{{ asset('sit/bootstrap.css') }}">
       <link rel="stylesheet" href="{{ asset('sit/style.css') }}">
       <link rel="stylesheet" href="{{asset('sit/magnific-popup/magnific-popup.css')}}">
@@ -19,12 +19,12 @@
         <header class="mb-15 mb-xs-10">
             <section class="container d-flex justify-content-between">
                 <a href="{{route('site.home')}}">
-                    <img class="brand-img brand-img-l d-none d-lg-block mt-15" src="{{asset('/imagens/img37.jpg')}}" alt="">
+                    <img class="brand-img brand-img-l d-none d-lg-block mt-15" src="{{asset('/imagens/img35.png')}}" alt="">
                 </a>
                 <div>
                     <ul>
                         <li></li>
-                        <li> @if(date('H') >= 23 && date('H') <= 17 ) <font style="font-weight:700; font-size: 20px" color='red'>FECHADO</font>
+                        <li> @if(date('H') >= 23 || date('H') < 17 ) <font style="font-weight:700; font-size: 20px" color='red'>FECHADO</font>
                             @else <font style="font-weight:600; font-size: 20px" color='green'>ABERTO</font>
                             @endif
                         </li>
@@ -74,8 +74,8 @@
                 <div class="row">
                     <div class="col-4 mt-30 mb-30">
                         <p class="text-uppercase mb-15 fs-1-2">ENTRE EM CONTATO</p>
-                        <p class="mb-15"><i class="fa fa-phone flip-h mr-10"></i> (051)99999-9999</p>
-                        <p class="mb-15"><i class="far fa-envelope mr-10"></i> email@email.com</p>
+                        <p class="mb-15"><i class="fa fa-phone flip-h mr-10"></i> (051) 9 9790-9414</p>
+                        <p class="mb-15"><i class="far fa-envelope mr-10"></i> atendimento@newbistrodelivery.com.br</p>
                         <p class="mb-15"><i class="fas fa-location-arrow mr-10"></i> endreço tal, numero x - cidade - bairro</p>
                     </div>
                     <div class="col-4 mt-30 mb-30">
